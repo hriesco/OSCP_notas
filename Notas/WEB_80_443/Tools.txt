@@ -1,0 +1,54 @@
+# GATHERING
+# ==================
+parsero -u $URL
+curl -Li $URL/robots.txt
+curl -iL $URL | grep "title\|href" | sed -e 's/^[[::space:]]*//'
+whatweb $URL
+httprint -h $URL /usr/share/httprint/signatures.txt
+cewl -d 2 -m 5 -w webwordlist.txt $URL
+
+
+# WEB SCANNERS
+# =============
+nikto
+arachni
+acunetix
+appscan
+nessus
+w3af
+grabber
+vega
+skipfish
+cadaver
+metasploit wmap module
+
+
+# PROXY TESTING
+# ==============
+burpsuite
+paros
+suru
+webscarab
+zap
+
+
+# CMS SCANNERS
+# =============
+droopscan
+cmsmap
+wpscan
+joomscan
+joomlascan
+joomsq
+jscan
+
+
+# BBDD
+# =======
+sqlmap
+havij
+sqlninja
+sqlbrute
+bsql hacker
+absinthe
+darkmysqli
