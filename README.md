@@ -55,6 +55,6 @@ Nombre_nota_[Texto_En_Rojo].txt
 
 - Ejemplo
 
-Reverse_Shell_[NETCAT]
+Reverse_Shell_[NETCAT].txt
 
 - Para poner un comentario y que aparezca la linea en azul, empezar el texto con un \#.
