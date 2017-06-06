@@ -4,6 +4,8 @@ Aplicación hecha en Python v2.7 para gestionar los apuntes usados en los labora
 
 No he incluido mis apuntes, porque considero muy necesario que cada uno se haga sus propios cheatsheets a la vez que va aprendiendo y poniendo en práctica los conocimientos adquiridos. A parte de que cada persona le gustaría tenerlos organizados de una forma.
 
+Incluyo dos módulos y una notas por cada uno, a modo de ejemplo muy básico de la estructura que se podría seguir.
+
 ## Instalación
 
 ``` 
