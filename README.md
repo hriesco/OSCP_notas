@@ -11,7 +11,7 @@ Incluyo dos módulos y una notas por cada uno, a modo de ejemplo muy básico de 
 ## Instalación
 
 ``` 
-  git clone https://github.com/hectorriesco/OSCP.git
+  git clone https://github.com/hriesco/OSCP_notas.git
   sudo ./install 
 ```
 
