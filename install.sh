@@ -28,14 +28,17 @@ echo -e "$GREEN[+]$RESTORE Comprobando dependencias de python"
 python -c "import termcolor" 2> /dev/null
 if [ $? -ne 0 ]; then
 	echo -e "$LBLUE[!]$RESTORE Instalando libreria termcolor"
+	pip install termcolor
 fi
 python -c "import git" 2> /dev/null
 if [ $? -ne 0 ]; then
 	echo -e "$LBLUE[!]$RESTORE Instalando libreria git"
+	pip install gitpython
 fi
 python -c "import shutil" 2> /dev/null
 if [ $? -ne 0 ]; then
 	echo -e "$LBLUE[!]$RESTORE Instalando libreria shutil"
+	pip install shutilwhich
 fi
 echo -e "$GREEN[+]$RESTORE Librerias de python comprobadas e instaladas"
 
