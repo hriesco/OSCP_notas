@@ -4,6 +4,7 @@ from os import path, listdir, system, popen, makedirs, remove
 from termcolor import colored
 import subprocess
 import shutil
+import signal
 import git
 import sys
 
@@ -12,6 +13,10 @@ DIR_NOTES=PATH+"/Notas" # Directory where are the notes modules
 
 def cls():
     system("clear")
+
+# Check if pressed Ctrl + C
+def signal_handler(signal, frame):
+    sys.exit(0)
 
 def title():
     cls()
@@ -98,7 +103,11 @@ def list_menu(items, tipo=""):
 
     opc = -1
     while opc < 0 or opc > len(items):
-        opc = int(raw_input("Opc > "))
+        opc = raw_input("Opc > ")
+        if not opc or not opc.isdigit(): 
+            opc = -1
+        else:
+            opc = int(opc)
 
     return opc
 
@@ -108,6 +117,7 @@ def list_files(directory):
     full_file = None
     if path.exists(full_dir):
         files = listdir(full_dir)
+        files = sorted(files)
         opc = list_menu(files, "files")
 
         if opc != 0:
@@ -122,6 +132,7 @@ def list_modules():
     module = None
     if path.exists(DIR_NOTES):
         directories = listdir(DIR_NOTES)
+        directories = sorted(directories)
         opc = list_menu(directories, "modules") 
 
         if opc != 0:
@@ -157,6 +168,7 @@ def add_note(module):
         f.close()	
         
         items = ['gedit', 'vim', 'nano']
+        items = sorted(items)
         opc = list_menu(items, "notzero")
 
         proc = subprocess.Popen([items[opc-1], full_file])	
@@ -167,6 +179,7 @@ def add_note(module):
 # Function that handles add a module or a note
 def add_module_or_note():
     items = ['Modulo', 'Nota']
+    items = sorted(items)
     opc = list_menu(items)
 
     if opc == 1:
@@ -210,6 +223,7 @@ def delete_note():
 # Delete module or a note 
 def delete_module_or_note():
     items = ['Borrar Modulo', 'Borrar Nota']
+    items = sorted(items)
     opc = list_menu(items)
     
     if opc == 1:
@@ -226,6 +240,7 @@ def edit_note():
         filename = list_files(module)
         if filename != None:
             items = ['gedit', 'vim', 'nano']
+            items = sorted(items)
             opc = list_menu(items, "notzero")
 
             proc = subprocess.Popen([items[opc-1], filename])	
@@ -286,5 +301,6 @@ def list_options():
 
 # Main
 if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
     list_options()
 
