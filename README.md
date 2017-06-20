@@ -2,6 +2,8 @@
 
 Aplicación hecha en Python v2.7 para gestionar los apuntes usados en los laboratorios del OSCP.
 
+* Necesario hacer un fork o bajarse el código y subirlo cada uno a su Github, ya que si no, a la hora de actualizar o subir lo intentará hacer a mi cuenta y no os dejará sin saber la contraseña * 
+
 No he incluido mis apuntes, porque considero muy necesario que cada uno se haga sus propios cheatsheets a la vez que va aprendiendo y poniendo en práctica los conocimientos adquiridos. A parte de que cada persona le gustaría tenerlos organizados de una forma.
 
 Incluyo dos módulos y una notas por cada uno, a modo de ejemplo muy básico de la estructura que se podría seguir.
@@ -9,7 +11,7 @@ Incluyo dos módulos y una notas por cada uno, a modo de ejemplo muy básico de 
 ## Instalación
 
 ``` 
-  git clone https://github.com/hectorriesco/OSCP.git
+  git clone https://github.com/hriesco/OSCP_notas.git
   sudo ./install 
 ```
 
@@ -55,6 +57,6 @@ Nombre_nota_[Texto_En_Rojo].txt
 
 - Ejemplo
 
-Reverse_Shell_[NETCAT]
+Reverse_Shell_[NETCAT].txt
 
 - Para poner un comentario y que aparezca la linea en azul, empezar el texto con un \#.
